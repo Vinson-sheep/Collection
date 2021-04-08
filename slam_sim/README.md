@@ -45,3 +45,13 @@ roslaunch slam_sim startup.launch
 ```
 
 有时候gazebo和rviz没有同时开启，这跟电脑性能有关，多退出launch终端重试几次就好了。
+
+### 6. 启动远程操控
+```
+roslaunch slam_sim teleop.launch
+```
+
+### 7. 保存地图
+```
+roslaunch slam_sim map_save.launch
+```
