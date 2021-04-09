@@ -1,0 +1,6 @@
+<launch>
+    <!--加载参数-->
+    <arg name="model" default="burger"/>
+    <!-- 启动键盘操作节点 -->
+    <node pkg="slam_sim" type="turtlebot3_teleop_key.py" name="turtlebot3_teleop_keyboard"  output="screen" />
+</launch>

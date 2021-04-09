@@ -1,0 +1,17 @@
+<launch>
+    <!-- 启动vicon -->
+    <include file="$(find slam_act)/launch/vicon.launch" />
+    <!-- 启动gmapping -->
+    <include file="$(find slam_act)/launch/gmapping.launch" />
+    <!-- 导入模型参数 -->
+    <arg name="model" default="burger"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find slam_act)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+    <!-- 启动rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find slam_act)/rviz/slam_act.rviz" />
+    <!-- 发布模型的状态信息 -->
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="50.0" />
+        <param name="tf_prefix" value=""/>
+    </node>
+</launch>
