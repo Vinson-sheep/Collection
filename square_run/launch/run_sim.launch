@@ -1,0 +1,26 @@
+<launch>
+    <!--启动gazebo-->
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch" >
+        <arg name="model" default="burger"/>
+        <arg name="x_pos" default="0.0"/>
+        <arg name="y_pos" default="0.0"/>
+        <arg name="z_pos" default="0.0"/>
+    </include>
+    <!--启动控制器-->
+    <node pkg="square_run" type="run_square" name="turbot_ctrl_unit" output="screen">
+        <param name="turtlebot_frame_id" value="base_footprint" type="str" />   
+        <param name="odom_frame_id" value="odom" type="str" />
+        <param name="control_topic" value="/cmd_vel"  type="str" />
+
+        <param name="pos_num" value="4" type="int"/>
+        <param name="pos0_x" value="1.0" type="double"/>
+        <param name="pos0_y" value="1.0" type="double"/>
+        <param name="pos1_x" value="-1.0" type="double"/>
+        <param name="pos1_y" value="1.0" type="double"/>
+        <param name="pos2_x" value="-1.0" type="double"/>
+        <param name="pos2_y" value="-1.0" type="double"/>
+        <param name="pos3_x" value="1.0" type="double"/>
+        <param name="pos3_y" value="-1.0" type="double"/>
+    </node>
+
+</launch>
