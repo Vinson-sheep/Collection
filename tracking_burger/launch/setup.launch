@@ -1,0 +1,11 @@
+<launch>
+    <!--启动gazebo-->
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch" >
+        <arg name="model" default="burger"/>
+        <arg name="x_pos" default="0.0"/>
+        <arg name="y_pos" default="0.0"/>
+        <arg name="z_pos" default="0.0"/>
+    </include>
+
+
+</launch>
