@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Global_Planning::TrackUnit Class Reference</title>
+<title>Burger Tracking Module: Global_Planning::TrackUnit Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Burger Tracking Module
+   &#160;<span id="projectnumber">bata 1.0</span>
    </div>
+   <div id="projectbrief">have example</div>
   </td>
  </tr>
  </tbody>
@@ -64,7 +66,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_global___planning_1_1_track_unit-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Global_Planning::TrackUnit Class Reference</div>  </div>
@@ -78,124 +79,136 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a1e4cadd188e647288b21578bd59d624a"><td class="memItemLeft" align="right" valign="top"><a id="a1e4cadd188e647288b21578bd59d624a"></a>
-typedef std::shared_ptr&lt; <a class="el" href="class_global___planning_1_1_track_unit.html">TrackUnit</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#a1e4cadd188e647288b21578bd59d624a">Ptr</a></td></tr>
-<tr class="memdesc:a1e4cadd188e647288b21578bd59d624a"><td class="mdescLeft">&#160;</td><td class="mdescRight">shared pointer for <a class="el" href="class_global___planning_1_1_track_unit.html" title="Burger Tracking Control Unit. ">TrackUnit</a> * We recommand to use pointer rather than a class instance. <br /></td></tr>
-<tr class="separator:a1e4cadd188e647288b21578bd59d624a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ced7a95b25932e828d95ab64bf1babb"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; <a class="el" href="class_global___planning_1_1_track_unit.html">TrackUnit</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#a1ced7a95b25932e828d95ab64bf1babb">Ptr</a></td></tr>
+<tr class="memdesc:a1ced7a95b25932e828d95ab64bf1babb"><td class="mdescLeft">&#160;</td><td class="mdescRight">shared pointer for <a class="el" href="class_global___planning_1_1_track_unit.html" title="Burger Tracking Control Unit. ">TrackUnit</a> *  <a href="#a1ced7a95b25932e828d95ab64bf1babb">More...</a><br /></td></tr>
+<tr class="separator:a1ced7a95b25932e828d95ab64bf1babb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">construction function</div></td></tr>
 <tr class="memitem:af9ac69b18f983ad888a8594210ebf733"><td class="memItemLeft" align="right" valign="top"><a id="af9ac69b18f983ad888a8594210ebf733"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#af9ac69b18f983ad888a8594210ebf733">TrackUnit</a> ()</td></tr>
-<tr class="memdesc:af9ac69b18f983ad888a8594210ebf733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Track Unit object To initialize pub_topic, _frame_id_burger, _frame_id_odom, forward looking distance. <br /></td></tr>
+<tr class="memdesc:af9ac69b18f983ad888a8594210ebf733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Track Unit object. <br /></td></tr>
 <tr class="separator:af9ac69b18f983ad888a8594210ebf733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49ac9f7d9c6d7e505bcc398ac575fa22"><td class="memItemLeft" align="right" valign="top"><a id="a49ac9f7d9c6d7e505bcc398ac575fa22"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#a49ac9f7d9c6d7e505bcc398ac575fa22">~TrackUnit</a> ()</td></tr>
-<tr class="memdesc:a49ac9f7d9c6d7e505bcc398ac575fa22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Track Unit object No thing to do. <br /></td></tr>
+<tr class="memitem:a49ac9f7d9c6d7e505bcc398ac575fa22"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#a49ac9f7d9c6d7e505bcc398ac575fa22">~TrackUnit</a> ()</td></tr>
+<tr class="memdesc:a49ac9f7d9c6d7e505bcc398ac575fa22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Track Unit object.  <a href="#a49ac9f7d9c6d7e505bcc398ac575fa22">More...</a><br /></td></tr>
 <tr class="separator:a49ac9f7d9c6d7e505bcc398ac575fa22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae00c18addf83cc57a0ddfead96d53113"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#ae00c18addf83cc57a0ddfead96d53113">set_pub_topic</a> (const string topic)</td></tr>
-<tr class="memdesc:ae00c18addf83cc57a0ddfead96d53113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the pub topic object Topic name would not be influenced by namespace defined by.  <a href="#ae00c18addf83cc57a0ddfead96d53113">More...</a><br /></td></tr>
-<tr class="separator:ae00c18addf83cc57a0ddfead96d53113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a246c274d23f5e739f35720662b715feb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#a246c274d23f5e739f35720662b715feb">set_frame_id_burger</a> (const string burger)</td></tr>
-<tr class="memdesc:a246c274d23f5e739f35720662b715feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frame id for burger object You should set frame id rightly. It's "base_footprint" most of the time. "turtlebot3" as default.  <a href="#a246c274d23f5e739f35720662b715feb">More...</a><br /></td></tr>
-<tr class="separator:a246c274d23f5e739f35720662b715feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a59723c0ffef932d43b837f19ac5f76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#a4a59723c0ffef932d43b837f19ac5f76">set_frame_id_odom</a> (const string odom)</td></tr>
-<tr class="memdesc:a4a59723c0ffef932d43b837f19ac5f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frame id odom object You should set frame id rightly. It's "map" most of the time.  <a href="#a4a59723c0ffef932d43b837f19ac5f76">More...</a><br /></td></tr>
-<tr class="separator:a4a59723c0ffef932d43b837f19ac5f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae34bc618e5a33012f26d986883b6ead3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#ae34bc618e5a33012f26d986883b6ead3">set_fw_lk_distance</a> (const double new_dist)</td></tr>
-<tr class="memdesc:ae34bc618e5a33012f26d986883b6ead3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set forward looking distance Forward looking distance refers to the length from furthest traking point to current postion. A higher value should be passed when the mechine is expected to trace path smoothly. However, a great value would make mechine ingore some shape point of the path.  <a href="#ae34bc618e5a33012f26d986883b6ead3">More...</a><br /></td></tr>
-<tr class="separator:ae34bc618e5a33012f26d986883b6ead3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae78e6a634662dce0f8c48a0caba8a38d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#ae78e6a634662dce0f8c48a0caba8a38d">pub_control</a> (const nav_msgs::Path &amp;path, const geometry_msgs::Pose &amp;cur_pos) const</td></tr>
-<tr class="memdesc:ae78e6a634662dce0f8c48a0caba8a38d"><td class="mdescLeft">&#160;</td><td class="mdescRight">publish control command to burger One invoking means one publishing without spinOnce. It can be used in while-loop or callback function.  <a href="#ae78e6a634662dce0f8c48a0caba8a38d">More...</a><br /></td></tr>
-<tr class="separator:ae78e6a634662dce0f8c48a0caba8a38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af206846d5a6ddbef34e23341a9dcf5d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#af206846d5a6ddbef34e23341a9dcf5d1">get_closest_point_id</a> (const nav_msgs::Path &amp;path, const geometry_msgs::Pose &amp;cur_pos) const</td></tr>
-<tr class="memdesc:af206846d5a6ddbef34e23341a9dcf5d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the closest point index of the path This function is for special using.  <a href="#af206846d5a6ddbef34e23341a9dcf5d1">More...</a><br /></td></tr>
-<tr class="separator:af206846d5a6ddbef34e23341a9dcf5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab55bd7b7b30500844bad389101ca9a0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#ab55bd7b7b30500844bad389101ca9a0c">get_track_point_id</a> (const nav_msgs::Path &amp;path, const geometry_msgs::Pose &amp;cur_pos) const</td></tr>
-<tr class="memdesc:ab55bd7b7b30500844bad389101ca9a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the track point index of the path This function is for special using.  <a href="#ab55bd7b7b30500844bad389101ca9a0c">More...</a><br /></td></tr>
-<tr class="separator:ab55bd7b7b30500844bad389101ca9a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33deae46c51d9ece8908f724f61ae375"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#a33deae46c51d9ece8908f724f61ae375">TrackUnit</a> (ros::NodeHandle &amp;nh, const string topic=&quot;cmd_vel&quot;)</td></tr>
+<tr class="memdesc:a33deae46c51d9ece8908f724f61ae375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Track Unit object.  <a href="#a33deae46c51d9ece8908f724f61ae375">More...</a><br /></td></tr>
+<tr class="separator:a33deae46c51d9ece8908f724f61ae375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">initialization function</div></td></tr>
+<tr class="memitem:a09bc6154d79e729e946fdfe1162786ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#a09bc6154d79e729e946fdfe1162786ed">set_frame_id_burger</a> (const string burger=&quot;base_footprint&quot;)</td></tr>
+<tr class="memdesc:a09bc6154d79e729e946fdfe1162786ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frame id for burger object.  <a href="#a09bc6154d79e729e946fdfe1162786ed">More...</a><br /></td></tr>
+<tr class="separator:a09bc6154d79e729e946fdfe1162786ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62f0b214ae90998c47a49e1d4b0f15aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#a62f0b214ae90998c47a49e1d4b0f15aa">set_frame_id_odom</a> (const string odom=&quot;map&quot;)</td></tr>
+<tr class="memdesc:a62f0b214ae90998c47a49e1d4b0f15aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frame id odom object.  <a href="#a62f0b214ae90998c47a49e1d4b0f15aa">More...</a><br /></td></tr>
+<tr class="separator:a62f0b214ae90998c47a49e1d4b0f15aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa449d194a6f4d0f21a3654d4fc93a10a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#aa449d194a6f4d0f21a3654d4fc93a10a">set_fw_lk_distance</a> (const double new_dist=1.0)</td></tr>
+<tr class="memdesc:aa449d194a6f4d0f21a3654d4fc93a10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set forward looking distance.  <a href="#aa449d194a6f4d0f21a3654d4fc93a10a">More...</a><br /></td></tr>
+<tr class="separator:aa449d194a6f4d0f21a3654d4fc93a10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a394e44dc9ff2af4055aa31080eae7458"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#a394e44dc9ff2af4055aa31080eae7458">set_dist_error</a> (const double temp=0.1)</td></tr>
+<tr class="memdesc:a394e44dc9ff2af4055aa31080eae7458"><td class="mdescLeft">&#160;</td><td class="mdescRight">radius of end point  <a href="#a394e44dc9ff2af4055aa31080eae7458">More...</a><br /></td></tr>
+<tr class="separator:a394e44dc9ff2af4055aa31080eae7458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">core function</div></td></tr>
+<tr class="memitem:a7a3cb100ba8ea98b1ca9106d4f2ccbed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_global___planning_1_1_track_unit.html#a7a3cb100ba8ea98b1ca9106d4f2ccbed">pub_control</a> (const nav_msgs::Path &amp;path)</td></tr>
+<tr class="memdesc:a7a3cb100ba8ea98b1ca9106d4f2ccbed"><td class="mdescLeft">&#160;</td><td class="mdescRight">publish control command to burger  <a href="#a7a3cb100ba8ea98b1ca9106d4f2ccbed">More...</a><br /></td></tr>
+<tr class="separator:a7a3cb100ba8ea98b1ca9106d4f2ccbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Burger Tracking Control Unit. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="af206846d5a6ddbef34e23341a9dcf5d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af206846d5a6ddbef34e23341a9dcf5d1">&#9670;&nbsp;</a></span>get_closest_point_id()</h2>
+<p>By this class, turtlebot3 can trace the path smoothly without any consideration of controling. Initualization is expected to be executed before using. Don't worry. Operation is extreme simple and you can grasp by a minute.</p>
+<p>demo </p><pre class="fragment">......
+
+Global_Planning::TrackUnit::Ptr tu_ptr(new Global_Planning::TrackUnit(nh, "cmd_vel"));
+tu_ptr-&gt;set_frame_id_burger("base_footprint");
+tu_ptr-&gt;set_frame_id_odom("odom");
+tu_ptr-&gt;set_fw_lk_distance(0.5);
+
+ros::Rate r(1);
+while(ros::ok()){
+    tu_ptr-&gt;pub_control(path);
+    ros::spinOnce();
+    r.sleep();
+}
+......</pre> </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a1ced7a95b25932e828d95ab64bf1babb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ced7a95b25932e828d95ab64bf1babb">&#9670;&nbsp;</a></span>Ptr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Global_Planning::TrackUnit::get_closest_point_id </td>
-          <td>(</td>
-          <td class="paramtype">const nav_msgs::Path &amp;&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const geometry_msgs::Pose &amp;&#160;</td>
-          <td class="paramname"><em>cur_pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="memname">typedef std::shared_ptr&lt;<a class="el" href="class_global___planning_1_1_track_unit.html">TrackUnit</a>&gt; <a class="el" href="class_global___planning_1_1_track_unit.html#a1ced7a95b25932e828d95ab64bf1babb">Global_Planning::TrackUnit::Ptr</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the closest point index of the path This function is for special using. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>is the waypoints mechine is expected to trace </td></tr>
-    <tr><td class="paramname">cur_pos</td><td>is current position (meter) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int is the index of path waypoint </dd></dl>
+<p>shared pointer for <a class="el" href="class_global___planning_1_1_track_unit.html" title="Burger Tracking Control Unit. ">TrackUnit</a> * </p>
+<p>We recommand to use pointer rather than a class instance. </p>
 
 </div>
 </div>
-<a id="ab55bd7b7b30500844bad389101ca9a0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab55bd7b7b30500844bad389101ca9a0c">&#9670;&nbsp;</a></span>get_track_point_id()</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a49ac9f7d9c6d7e505bcc398ac575fa22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ac9f7d9c6d7e505bcc398ac575fa22">&#9670;&nbsp;</a></span>~TrackUnit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Global_Planning::TrackUnit::get_track_point_id </td>
+          <td class="memname">Global_Planning::TrackUnit::~TrackUnit </td>
           <td>(</td>
-          <td class="paramtype">const nav_msgs::Path &amp;&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">const geometry_msgs::Pose &amp;&#160;</td>
-          <td class="paramname"><em>cur_pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the track point index of the path This function is for special using. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>is the waypoints mechine is expected to trace </td></tr>
-    <tr><td class="paramname">cur_pos</td><td>is current position (meter) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int is the index of path waypoint </dd></dl>
+<p>Destroy the Track Unit object. </p>
+<p>No thing to do. </p>
 
 </div>
 </div>
-<a id="ae78e6a634662dce0f8c48a0caba8a38d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae78e6a634662dce0f8c48a0caba8a38d">&#9670;&nbsp;</a></span>pub_control()</h2>
+<a id="a33deae46c51d9ece8908f724f61ae375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33deae46c51d9ece8908f724f61ae375">&#9670;&nbsp;</a></span>TrackUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Global_Planning::TrackUnit::TrackUnit </td>
+          <td>(</td>
+          <td class="paramtype">ros::NodeHandle &amp;&#160;</td>
+          <td class="paramname"><em>nh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>topic</em> = <code>&quot;cmd_vel&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new Track Unit object. </p>
+<p>To initialize pub_topic, _frame_id_burger, _frame_id_odom, forward looking distance </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nh</td><td>All of the topics and parameters of ros can float by namespace according to nh. </td></tr>
+    <tr><td class="paramname">topic</td><td>is the topic to which you want to publish infomations </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7a3cb100ba8ea98b1ca9106d4f2ccbed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a3cb100ba8ea98b1ca9106d4f2ccbed">&#9670;&nbsp;</a></span>pub_control()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,35 +217,56 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void Global_Planning::TrackUnit::pub_control </td>
           <td>(</td>
           <td class="paramtype">const nav_msgs::Path &amp;&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>path</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const geometry_msgs::Pose &amp;&#160;</td>
-          <td class="paramname"><em>cur_pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>publish control command to burger One invoking means one publishing without spinOnce. It can be used in while-loop or callback function. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>publish control command to burger </p>
+<p>One invoking means one publishing without spinOnce. It can be used in while-loop or callback function. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>is the waypoints mechine is expected to trace </td></tr>
-    <tr><td class="paramname">cur_pos</td><td>is current position (meter) </td></tr>
+    <tr><td class="paramname">path</td><td>is the waypoints mechine is expected to trace</td></tr>
+  </table>
+  </dd>
+</dl>
+<ol type="1">
+<li>将path中所有点转变为相对于turtlebot3的点</li>
+<li>计算最近可追踪的点id</li>
+<li>计算目标线速度和角速度</li>
+<li>发布速度信息给Smoother </li>
+</ol>
+
+</div>
+</div>
+<a id="a394e44dc9ff2af4055aa31080eae7458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a394e44dc9ff2af4055aa31080eae7458">&#9670;&nbsp;</a></span>set_dist_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Global_Planning::TrackUnit::set_dist_error </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>temp</em> = <code>0.1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>radius of end point </p>
+<p>If the mechine have run into the radius (distance error) of the end point of the path, it would stop and return feedback. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temp</td><td>meter of radius </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a246c274d23f5e739f35720662b715feb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a246c274d23f5e739f35720662b715feb">&#9670;&nbsp;</a></span>set_frame_id_burger()</h2>
+<a id="a09bc6154d79e729e946fdfe1162786ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09bc6154d79e729e946fdfe1162786ed">&#9670;&nbsp;</a></span>set_frame_id_burger()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,24 +275,24 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void Global_Planning::TrackUnit::set_frame_id_burger </td>
           <td>(</td>
           <td class="paramtype">const string&#160;</td>
-          <td class="paramname"><em>burger</em></td><td>)</td>
+          <td class="paramname"><em>burger</em> = <code>&quot;base_footprint&quot;</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the frame id for burger object You should set frame id rightly. It's "base_footprint" most of the time. "turtlebot3" as default. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Set the frame id for burger object. </p>
+<p>You should set frame id rightly. It's "base_footprint" most of the time. "base_footprint" as default. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">burger</td><td></td></tr>
+    <tr><td class="paramname">burger</td><td>is the frame id of turbot3 </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a4a59723c0ffef932d43b837f19ac5f76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a59723c0ffef932d43b837f19ac5f76">&#9670;&nbsp;</a></span>set_frame_id_odom()</h2>
+<a id="a62f0b214ae90998c47a49e1d4b0f15aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62f0b214ae90998c47a49e1d4b0f15aa">&#9670;&nbsp;</a></span>set_frame_id_odom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,24 +301,24 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void Global_Planning::TrackUnit::set_frame_id_odom </td>
           <td>(</td>
           <td class="paramtype">const string&#160;</td>
-          <td class="paramname"><em>odom</em></td><td>)</td>
+          <td class="paramname"><em>odom</em> = <code>&quot;map&quot;</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the frame id odom object You should set frame id rightly. It's "map" most of the time. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Set the frame id odom object. </p>
+<p>You should set frame id rightly. It's "map" most of the time. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">odom</td><td></td></tr>
+    <tr><td class="paramname">odom</td><td>is the frame id to which points are refered originally </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ae34bc618e5a33012f26d986883b6ead3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae34bc618e5a33012f26d986883b6ead3">&#9670;&nbsp;</a></span>set_fw_lk_distance()</h2>
+<a id="aa449d194a6f4d0f21a3654d4fc93a10a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa449d194a6f4d0f21a3654d4fc93a10a">&#9670;&nbsp;</a></span>set_fw_lk_distance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -293,14 +327,14 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void Global_Planning::TrackUnit::set_fw_lk_distance </td>
           <td>(</td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>new_dist</em></td><td>)</td>
+          <td class="paramname"><em>new_dist</em> = <code>1.0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set forward looking distance Forward looking distance refers to the length from furthest traking point to current postion. A higher value should be passed when the mechine is expected to trace path smoothly. However, a great value would make mechine ingore some shape point of the path. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Set forward looking distance. </p>
+<p>Forward looking distance refers to the length from furthest traking point to current postion. A higher value should be passed when the mechine is expected to trace path smoothly. However, a great value would make mechine ingore some shape point of the path. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">new_dist</td><td>forward looking distance (meter) - 1.0 as default </td></tr>
   </table>
@@ -309,34 +343,9 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae00c18addf83cc57a0ddfead96d53113"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae00c18addf83cc57a0ddfead96d53113">&#9670;&nbsp;</a></span>set_pub_topic()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Global_Planning::TrackUnit::set_pub_topic </td>
-          <td>(</td>
-          <td class="paramtype">const string&#160;</td>
-          <td class="paramname"><em>topic</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the pub topic object Topic name would not be influenced by namespace defined by. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">topic</td><td>is the topic to which you want to publish infomations </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>tracking_burger/include/tracking_burger/<a class="el" href="_track_unit_8h_source.html">TrackUnit.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>software_var/catkin_ws/src/tracking_burger/include/tracking_burger/<a class="el" href="_track_unit_8h_source.html">TrackUnit.h</a></li>
+<li>software_var/catkin_ws/src/tracking_burger/src/<a class="el" href="_track_unit_8cpp.html">TrackUnit.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

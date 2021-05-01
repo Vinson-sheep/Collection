@@ -1,11 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "gpst~",
+  0: "aglmpst~",
   1: "st",
   2: "g",
-  3: "t",
-  4: "gpst~",
-  5: "p"
+  3: "st",
+  4: "pst~",
+  5: "alm",
+  6: "p"
 };
 
 var indexSectionNames =
@@ -15,7 +16,8 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "typedefs"
+  5: "variables",
+  6: "typedefs"
 };
 
 var indexSectionLabels =
@@ -25,6 +27,7 @@ var indexSectionLabels =
   2: "Namespaces",
   3: "Files",
   4: "Functions",
-  5: "Typedefs"
+  5: "Variables",
+  6: "Typedefs"
 };
 

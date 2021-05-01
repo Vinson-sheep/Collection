@@ -55,6 +55,7 @@ const double  Smoother::constrain(const double input, const double low, const do
 /// while control message would be publish and velocity infomation would be print in terminal.
 /// @attention This function is no spin and sleep. User should use spin function and sleep in the 
 /// exteral while loop.
+/// @details description
 void  Smoother::set(const double target_linear_vel, const double target_angular_vel){
 
     // create twist msg

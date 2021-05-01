@@ -1,7 +1,8 @@
 /// @file Smoother.h
 /// @author Vinson Sheep (775014077@qq.com)
 /// @brief 
-/// @version 0.1
+/// 
+/// @version 1.0
 /// @date 2021-04-28
 /// 
 /// @copyright Copyright (c) 2021
@@ -90,26 +91,28 @@ private:
 
 public:
 	/// @brief Construct a new Smoother object
-	/// 
+	/// @details 
 	Smoother();
 
 	/// @brief Destroy the Smoother object
-	/// Do nothing.
+	/// @details Do nothing.
 	~Smoother();
 
 	/// @brief Construct a new Smoother object
-	/// To initialize all of private attributes.
+	/// @details To initialize all of private attributes.
 	/// @param nh All of the topics and parameters of ros can double by namespace according to nh.
 	/// @param topic is the topic to which you want to publish infomations
 	Smoother(ros::NodeHandle &nh, const string topic = "cmd_vel");
 
 	/// @brief controling message publisher function
-	/// Publish velocity messages after smoothing.
+	/// @details Publish velocity messages after smoothing.
+	/// @details dsadsa
 	/// @param target_linear_vel target linear velocity
 	/// @param target_angular_vel target angular velocity
 	void set(const double target_linear_vel = 0.0, const double target_angular_vel = 0.0);
 
-	/// @brief shared pointer for Smoother * 
+	/// @brief shared pointer for Smoother *
+	/// 
 	/// We recommand to use pointer rather than a class instance.
 	typedef std::shared_ptr<Smoother> Ptr; 
 };

@@ -7,7 +7,7 @@ add_compile_options(-std=c++11)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS roscpp tf2 tf2_ros tf2_geometry_msgs tf std_msgs nav_msgs geometry_msgs)
+find_package(catkin REQUIRED COMPONENTS roscpp std_msgs turtlebot3_msgs geometry_msgs tf2 tf2_ros tf2_geometry_msgs gazebo_msgs tf)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -34,9 +34,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp tf2 tf2_ros tf2_geometry_msgs tf 
 ##     * add a exec_depend tag for "message_runtime"
 ## * In this file (CMakeLists.txt):
 ##   * add "message_generation" and every package in MSG_DEP_SET to
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-)
+##     find_package(catkin REQUIRED COMPONENTS ...)
 ##   * add "message_runtime" and every package in MSG_DEP_SET to
 ##     catkin_package(CATKIN_DEPENDS ...)
 ##   * uncomment the add_*_files sections below as needed
@@ -204,6 +202,7 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
+
 add_library(TrackUnit
   include/tracking_burger/TrackUnit.h
   src/TrackUnit.cpp
@@ -211,7 +210,6 @@ add_library(TrackUnit
 add_dependencies(TrackUnit ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(TrackUnit
   ${catkin_LIBRARIES}
-  Smoother
 )
 
 add_library(Smoother
@@ -223,11 +221,12 @@ target_link_libraries(Smoother
   ${catkin_LIBRARIES}
 )
 
-add_library(test_demo
-  src/test_demo.cpp
+add_executable(demo
+  src/demo.cpp
 )
-add_dependencies(test_demo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(test_demo
+add_dependencies(demo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(demo
   ${catkin_LIBRARIES}
   TrackUnit
+  Smoother
 )
