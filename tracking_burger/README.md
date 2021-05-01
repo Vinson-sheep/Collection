@@ -2,7 +2,7 @@
 
 By this class, turtlebot3 can trace the path smoothly without any consideration of controling. Initualization is expected to be executed before using. Don't worry. Operation is extreme simple and you can grasp by a minute.
 
-[reference](./docs/html/index.html)
+[reference](https://raw.githack.com/Vinson-sheep/ros_package/master/tracking_burger/docs/html/index.html)
 
 ## demo
 
