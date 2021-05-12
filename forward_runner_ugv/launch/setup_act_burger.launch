@@ -1,0 +1,36 @@
+<launch>
+
+    <arg name="ugv_name" value="ugv1" />
+
+    <group ns="$(arg ugv_name)">
+        <!--参数-->
+        <arg name="set_lidar_frame_id" default="base_scan"/>
+        <!--启动burger-->
+        <include file="$(find turtlebot3_bringup)/launch/turtlebot3_core.launch">
+            <arg name="multi_robot_name" value="$(arg ugv_name)"/>
+        </include>
+        <!--雷达模块-->
+        <include file="$(find turtlebot3_bringup)/launch/turtlebot3_lidar.launch">
+            <arg name="set_frame_id" value="$(arg set_lidar_frame_id)"/>
+        </include>
+        <!--诊断模块-->
+        <node pkg="turtlebot3_bringup" type="turtlebot3_diagnostics" name="turtlebot3_diagnostics" output="screen"/>
+
+        <!--模型tf发送器 (已弃用)-->
+        <!--<param name="robot_description" command="$(find xacro)/xacro '$(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro'" />
+        <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+            <param name="publish_frequency" type="double" value="50.0" />
+            <param name="tf_prefix" value="$(arg ugv_name)"/>
+        </node>-->
+
+        <!-- 控制结点 -->
+        <node pkg="forward_runner_ugv" type="controller_node" name="controller_node" output="screen">
+            <param name="world_frame_id" value="world" />     
+            <param name="ugv_frame_id" value="turtlebot3" />
+            <param name="sim_mode" value="false" /> 
+            <!-- 确保/开头 -->
+            <param name="vicon_pose_name" value="/vrpn_client_node/turtlebot3/pose" />
+            <param name="ugv_name" value="$(arg ugv_name)" />     
+        </node>
+    </group>
+</launch>

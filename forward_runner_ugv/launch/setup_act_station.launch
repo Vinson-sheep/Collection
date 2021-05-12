@@ -1,0 +1,8 @@
+<launch>
+    <!-- 启动地面站终端 -->
+    <node pkg="forward_runner_ugv" type="terminal" name="terminal" output="screen" launch-prefix="gnome-terminal --tab --"/>
+  	<!-- vrpn 考虑放到地面端？ -->
+	<include file="$(find vrpn_client_ros)/launch/sample.launch">
+		<arg name="server" value="192.168.1.2"/>
+	</include>
+</launch>

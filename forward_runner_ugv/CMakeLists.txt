@@ -7,7 +7,7 @@ project(forward_runner_ugv)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS roscpp std_msgs turtlebot3_msgs geometry_msgs tf2 tf2_ros tf2_geometry_msgs gazebo_msgs tf message_generation)
+find_package(catkin REQUIRED COMPONENTS roscpp std_msgs turtlebot3_msgs geometry_msgs tf2 tf2_ros tf2_geometry_msgs tf message_generation nav_msgs)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)

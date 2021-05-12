@@ -5,32 +5,41 @@
     <arg name="first_tb3_y_pos" default="0.0"/>
     <arg name="first_tb3_z_pos" default="0.0"/>
     <arg name="first_tb3_yaw"   default="0.0"/>
-
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!-- 启动gazebo -->
+    <!--<include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="gui" value="true"/>
         <arg name="world_name" value="$(find gazebo_ros)/worlds/empty.world"/>
-    </include> 
+    </include> -->
+
+	<include file="$(find prometheus_gazebo)/launch_CXY/sitl_cxy_case2_1ugv.launch">
+		<arg name="ugv1_name"  default="ugv1"/>
+        <arg name="ugv1_init_x" 	default=" 2.0"/>
+        <arg name="ugv1_init_y" 	default=" 0.0"/>
+        <arg name="ugv1_init_z" 	default=" 0.05"/>
+        <arg name="ugv1_init_yaw"   default=" 0.0"/>
+	</include>
+
 
     <group ns = "$(arg first_tb3)">
-        <param name="name" value="$(arg first_tb3)" />
-
+        <!--<param name="name" value="$(arg first_tb3)" />-->
         <param name="robot_description" command="$(find xacro)/xacro --inorder $(find prometheus_gazebo)/turtlebot3_model/urdf/turtlebot3_$(arg model).urdf.xacro" />
-
-        <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+        <!-- 发布robot状态 -->
+        <!--<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
             <param name="publish_frequency" type="double" value="50.0" />
             <param name="tf_prefix" value="$(arg first_tb3)" />
-        </node>
-    
-        <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model $(arg first_tb3) -x $(arg first_tb3_x_pos) -y $(arg first_tb3_y_pos) -z $(arg first_tb3_z_pos) -Y $(arg first_tb3_yaw) -param robot_description" />
-            
-        <node pkg="forward_runner_ugv" type="controller_node" name="controller_node" output="screen" >
+        </node>-->
+        <!-- 生成模型 -->
+        <!--<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model $(arg first_tb3) -x $(arg first_tb3_x_pos) -y $(arg first_tb3_y_pos) -z $(arg first_tb3_z_pos) -Y $(arg first_tb3_yaw) -param robot_description" />-->
+        <!-- 启动控制结点 -->
+        <node pkg="forward_runner_ugv" type="controller_node" name="controller_node" output="screen" launch-prefix="gnome-terminal --tab --" >
             <param name="world_frame_id" value="$(arg first_tb3)/odom" />
             <param name="ugv_frame_id" value="$(arg first_tb3)/base_footprint" />
+            <param name="sim_mode" value="true" /> 
+            <param name="vicon_pose_name" value="" />
             <param name="ugv_name" value="$(arg first_tb3)" />
         </node>
     </group>
-
+    <!-- 启动地面站终端 -->
     <node pkg="forward_runner_ugv" type="terminal" name="terminal" output="screen" launch-prefix="gnome-terminal --tab --"/>
-
 </launch>
 

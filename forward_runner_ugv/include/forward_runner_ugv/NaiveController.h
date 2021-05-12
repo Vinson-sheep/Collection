@@ -21,6 +21,7 @@
 #include "tf2/LinearMath/Quaternion.h"
 #include "math.h" // abs, atan
 #include <tf2/utils.h> // getYaw
+#include <nav_msgs/Odometry.h>
 
 namespace Naive_Planner
 {
@@ -59,8 +60,13 @@ private:
 	/// @{
 	string world_frame_id_;
 	string ugv_frame_id_;
-	string ugv_name_;
+	string ugv_name_;	///< 小车的名字，用于打印数据
+	bool sim_mode_;	///< 是否仿真
+	string vicon_pose_name_;	///< vicon发送的pose话题名称，用于打印位姿
 	/// @}
+
+	ros::Subscriber odom_sub_;
+	ros::Subscriber vicon_pose_sub_;
 
 	/// @brief 是否有新的目标 
 	/// 
@@ -68,6 +74,16 @@ private:
 	/// @brief 目前是否有目标点 
 	/// @details 刚开始启动burger的时候是没有目标点的，此时为false
 	bool have_goal_;
+	/// @brief odom数据是否准备好了 
+	/// 
+	bool odom_ready_;
+
+	/// @brief 用于存储最新的odom 
+	/// 
+	nav_msgs::Odometry odom_;
+	/// @brief 用于存储最新的vicon_pose 
+	/// 
+	geometry_msgs::PoseStamped vicon_pose_;
 
 	tf2_ros::Buffer* tf_;
 
@@ -112,6 +128,15 @@ private:
 	/// @details 讲原始命令存储到global_pose_
 	/// @param command 来自终端的命令
 	void goal_cb(const forward_runner_ugv::Command::ConstPtr &command);
+
+	/// @brief odom数据回调 
+	/// 
+	/// @param odom 略
+	void odom_cb(const nav_msgs::Odometry::ConstPtr &odom);
+	/// @brief vicon传来的pose的数据回调 
+	/// 
+	/// @param pose 略
+	void vicon_pose_cb(const geometry_msgs::PoseStamped::ConstPtr &pose);
 
 };
 

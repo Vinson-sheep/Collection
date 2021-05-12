@@ -81,7 +81,7 @@ void  Smoother::set(const double target_linear_vel, const double target_angular_
                         _control_angular_vel, ANG_STEP_SIZE);
     }
     // print
-    ROS_INFO("burger: linear %.2f angular %.2f", twist.linear.x, twist.angular.z);
+    // ROS_INFO("burger: linear %.2f angular %.2f", twist.linear.x, twist.angular.z);
     // publish
     _pub.publish(twist);
 }

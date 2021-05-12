@@ -1,0 +1,12 @@
+<!-- tf桥接器（已弃用） -->
+<launch>
+    <group ns="ugv1">
+        <node pkg="forward_runner_ugv" type="tf_linker" name="tf_linker" output="screen">
+            <param name="vehicle_frame_id_1" value="turtlebot3" />
+            <param name="vehicle_frame_id_2" value="ugv1/base_footprint" />
+            <param name="world_frame_id" value="world" />
+            <param name="odom_frame_id" value="ugv1/odom" />
+            <param name="output_frame_id" value="world_vicon" />
+        </node>
+    </group>
+</launch>
