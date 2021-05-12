@@ -1,0 +1,5 @@
+<launch>
+    <group ns="ugv1">
+        <node pkg="forward_runner_ugv" type="controller_node" name="controller_node" output="screen" />
+    </group>
+</launch>
