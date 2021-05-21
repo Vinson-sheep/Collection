@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="sin_runner_tb2" type="station" name="station" output="screen" />
+</launch>

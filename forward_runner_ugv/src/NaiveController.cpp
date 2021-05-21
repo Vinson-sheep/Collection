@@ -104,7 +104,7 @@ void NaiveController::mainloop_cb(const ros::TimerEvent &event){
     // 目标偏航角（弧度）
     double yaw = tf2::getYaw(local_goal_.pose.orientation);
 
-    ROS_INFO("%s: DIST %f, YAW %f, direct %f", ugv_name_.to_str(), dist, yaw, direct);
+    ROS_INFO("%s: DIST %f, YAW %f, direct %f", ugv_name_.c_str(), dist, yaw, direct);
 
     switch(state_){
 
