@@ -1,0 +1,26 @@
+controller:
+  abs_y: 2.5
+  a_x: -2.5
+  b_x: 2.5
+  # vel_topic: cmd_vel_mux/input/teleop
+  vel_topic: teleop  
+  world_frame_id: tb2/odom
+
+local_planner:
+  angular_tolerance: 0.05
+  dist_tolerance: 0.1
+  max_fw_looking_dist: 0.5
+  min_fw_looking_dist: 0.5
+  fw_looking_factor: 4.0
+  prune_radius: 1.0
+  world_frame_id: tb2/odom
+  base_frame_id: tb2/base_footprint
+  twist_topic: mobile_base/commands/velocity
+  move_factor: 2.0
+  rotate_factor: 2.0
+
+smoother:
+  max_lin_vel: 0.70
+  max_ang_vel: 3.14
+  lin_step_size: 0.05
+  ang_step_size: 0.2

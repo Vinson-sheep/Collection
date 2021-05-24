@@ -18,21 +18,36 @@ Tb2Controller::Tb2Controller(const std::string name, tf2_ros::Buffer* tf):
     private_nh.param("a_x", a_x_, -2.5);
     private_nh.param("b_x", b_x_, 2.5);
 
-    initialize_path();
+    path_pub_ = nh.advertise<nav_msgs::Path>("path", 2);
 
     control_server_ = private_nh.advertiseService("Trigger", &Tb2Controller::control_cb, this);;
 
     private_nh.param("vel_topic", vel_topic_, std::string("cmd_vel_mux/input/teleop"));
-    private_nh.param("world_frame_id", world_frame_id_, std::string("world"));    
+    private_nh.param("world_frame_id", world_frame_id_, std::string("tb2/odom"));    
 
     vel_pub_ = nh.advertise<geometry_msgs::Twist>(vel_topic_.c_str(),10);
 
     mainloop_timer_ = nh.createTimer(ros::Duration(0.1), &Tb2Controller::mainloop_cb, this);
 
+    initialize_path();
+
 }
 
 void Tb2Controller::mainloop_cb(const ros::TimerEvent &event){
+
     geometry_msgs::Twist cmd;
+    nav_msgs::Path path_to_pub;
+    path_to_pub.header.stamp = ros::Time::now();
+    path_to_pub.header.frame_id = world_frame_id_;
+
+    // debug
+    if (path_selected_==1){
+        path_to_pub.poses = path_1_;
+    }
+    else if (path_selected_==2){
+        path_to_pub.poses = path_2_;
+    }
+    path_pub_.publish(path_to_pub);
 
     switch(state_){
 
@@ -42,14 +57,17 @@ void Tb2Controller::mainloop_cb(const ros::TimerEvent &event){
 
         case RUN:
             if(plp_p_->isGoalReached()){
+                ROS_INFO("reached the end.");
                 // switch path
                 if (path_selected_ == 1){
                     plp_p_->setPlan(path_2_);
                     path_selected_ = 2;
+                    ROS_INFO("select path 2");
                 }
                 else{
                     plp_p_->setPlan(path_1_);
                     path_selected_ = 1;
+                    ROS_INFO("select path 1");
                 }
             }
             if (plp_p_->computeVelocityCommands(cmd)){
@@ -99,7 +117,7 @@ bool Tb2Controller::initialize_path(){
     tf2::toMsg(tf2::Transform::getIdentity(), temp.pose);
     temp.header.frame_id = world_frame_id_;
     // init
-     if (a_x_ > b_x_){
+    if (a_x_ > b_x_){
         double c = a_x_;
         a_x_ = b_x_;
         b_x_ = c;
@@ -120,8 +138,10 @@ bool Tb2Controller::initialize_path(){
     // path_2_
     path_2_ = path_1_;
     reverse(path_2_.begin(), path_2_.end());
-
+    // set plan
+    plp_p_->setPlan(path_1_);
     path_selected_ = 1;
+
     return true;
 }
 

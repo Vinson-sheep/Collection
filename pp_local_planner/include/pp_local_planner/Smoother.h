@@ -12,8 +12,8 @@
 #define _SMOOTHER_H_
 
 #include "ros/ros.h"
-#include "geometry_msgs/Twist.h"
-#include "geometry_msgs/PointStamped.h"
+// #include "geometry_msgs/Twist.h"
+// #include "geometry_msgs/PointStamped.h"
 #include <algorithm>	// min, max
 #include <string>	// string
 #include <memory> // shared_ptr
@@ -34,10 +34,10 @@ private:
 	double LIN_STEP_SIZE_;	///< Linear step size, in terms of linear accelerator
 	double ANG_STEP_SIZE_; 	///< Angular step size, in terms of angular accelerator
 
-	double cur_linear_vel_;
-	double cur_angular_vel_;
+	// double cur_linear_vel_;
+	// double cur_angular_vel_;
 
-	ros::Publisher vel_pub_;
+	// ros::Publisher vel_pub_;
 
 	/// @brief smooth input data according output and slot
 	/// While output is much greater or lower than input, smoothing operation woule be token. Input
@@ -70,17 +70,20 @@ public:
 	Smoother(const string name);
 
 
-	void pub(const double cur_linear_vel, 
-			const double cur_angular_vel, 
-			const double target_linear_vel, 
-			const double target_angular_vel)
-	{
-		cur_linear_vel_ = cur_linear_vel;
-		cur_angular_vel_ = cur_angular_vel;
-		pub(target_linear_vel, target_angular_vel);
-	}
+	// void pub(const double cur_linear_vel, 
+	// 		const double cur_angular_vel, 
+	// 		const double target_linear_vel, 
+	// 		const double target_angular_vel)
+	// {
+	// 	cur_linear_vel_ = cur_linear_vel;
+	// 	cur_angular_vel_ = cur_angular_vel;
+	// 	pub(target_linear_vel, target_angular_vel);
+	// }
 
-	void pub(const double target_linear_vel = 0.0, const double target_angular_vel = 0.0);
+	// void pub(const double target_linear_vel = 0.0, const double target_angular_vel = 0.0);
+
+	void smooth(const double cur_linear_vel, const double cur_angular_vel,
+			double &target_linear_vel, double &target_angular_vel);
 
 	typedef std::shared_ptr<Smoother> Ptr; 
 };

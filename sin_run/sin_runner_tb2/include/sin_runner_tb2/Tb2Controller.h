@@ -11,6 +11,8 @@
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h> // getIdentity
 #include "geometry_msgs/PoseStamped.h"
 #include <math.h> // sin
+#include "nav_msgs/Path.h"
+
 
 namespace TB2{
 
@@ -47,6 +49,7 @@ private:
 	// publisher
 	ros::Publisher vel_pub_;
 	string vel_topic_;
+	ros::Publisher path_pub_;
 
 	string world_frame_id_;
 

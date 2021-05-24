@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(sin_runner_tb2)
+project(pp_local_planner)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -7,7 +7,7 @@ project(sin_runner_tb2)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS std_srvs geometry_msgs tf2 tf2_ros tf2_geometry_msgs roscpp)
+find_package(catkin REQUIRED COMPONENTS std_msgs geometry_msgs tf2 tf2_ros tf2_geometry_msgs roscpp)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -99,9 +99,9 @@ find_package(catkin REQUIRED COMPONENTS std_srvs geometry_msgs tf2 tf2_ros tf2_g
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES sin_runner_tb2
-#  CATKIN_DEPENDS other_catkin_pkg
+ INCLUDE_DIRS include
+ LIBRARIES Smoother PPLocalPlanner
+#  CATKIN_DEPENDS roscpp
 #  DEPENDS system_lib
 )
 
@@ -119,7 +119,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/sin_runner_tb2.cpp
+#   src/${PROJECT_NAME}/pp_local_planner.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -130,7 +130,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/sin_runner_tb2_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/pp_local_planner_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -169,18 +169,9 @@ include_directories(
 
 ## Mark libraries for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_libraries.html
-# install(TARGETS ${PROJECT_NAME}
-#   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
-# )
 
-## Mark cpp header files for installation
-# install(DIRECTORY include/${PROJECT_NAME}/
-#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-#   FILES_MATCHING PATTERN "*.h"
-#   PATTERN ".svn" EXCLUDE
-# )
+
+
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES
@@ -194,7 +185,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_sin_runner_tb2.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_pp_local_planner.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
@@ -203,34 +194,8 @@ include_directories(
 # catkin_add_nosetests(test)
 
 
-add_executable(station
-  src/station.cpp
-)
-add_dependencies(station ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(station
-  ${catkin_LIBRARIES}
-)
-
-add_executable(console
-  src/console.cpp
-)
-add_dependencies(console ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(console
-  ${catkin_LIBRARIES}
-)
-
-add_executable(tb2_controller_node
-  src/tb2_controller_node.cpp
-)
-add_dependencies(tb2_controller_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(tb2_controller_node
-  ${catkin_LIBRARIES}
-  Smoother
-  Tb2Controller
-)
-
 add_library(Smoother
-  include/sin_runner_tb2/Smoother.h
+  include/pp_local_planner/Smoother.h
   src/Smoother.cpp
 )
 add_dependencies(Smoother ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
@@ -238,11 +203,12 @@ target_link_libraries(Smoother
   ${catkin_LIBRARIES}
 )
 
-add_library(Tb2Controller
-  include/sin_runner_tb2/Tb2Controller.h
-  src/Tb2Controller.cpp
+add_library(PPLocalPlanner
+  include/pp_local_planner/PPLocalPlanner.h
+  src/PPLocalPlanner.cpp
 )
-add_dependencies(Tb2Controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(Tb2Controller
+add_dependencies(PPLocalPlanner ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(PPLocalPlanner
   ${catkin_LIBRARIES}
+  Smoother
 )

@@ -1,6 +1,6 @@
 <launch>
     <arg name="gui"        default="true"/>
-    <arg name="world_file" default="$(env TURTLEBOT_GAZEBO_WORLD_FILE)"/>
+    <arg name="world_file" default="$(find turtlebot_gazebo)/worlds/empty.world"/>
 
     <arg name="base"       value="$(optenv TURTLEBOT_BASE kobuki)"/> <!-- create, roomba -->
     <arg name="battery"    value="$(optenv TURTLEBOT_BATTERY /proc/acpi/battery/BAT0)"/>  <!-- /proc/acpi/battery/BAT0 -->
@@ -39,18 +39,18 @@
         </node>
 
         <!--controller-->
-        <node pkg="sin_runner_tb2" type="tb2_controller_node" name="controller" args="manager" launch-prefix="gnome-terminal --tab --">
-            <rosparam file="$(find sin_runner_tb2)/config.yaml" />
+        <node pkg="sin_runner_tb2" type="tb2_controller_node" name="controller" output="screen">
+            <rosparam file="$(find sin_runner_tb2)/sim.yaml" />
         </node>
     </group>
 
     <node pkg="sin_runner_tb2" type="console" name="console" launch-prefix="gnome-terminal --tab --">
-        <!--订阅用-->
         <param name="topic_name" value="tb2/odom" />
-        <!--打印用-->
         <param name="vehicle_name" value="tb2" />        
     </node>
 
     <node pkg="sin_runner_tb2" type="station" name="station" launch-prefix="gnome-terminal --tab --" />
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find sin_runner_tb2)/rviz/sim.rviz" />
 
 </launch>

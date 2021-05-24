@@ -1,9 +1,8 @@
 <launch>
     <node pkg="sin_runner_tb2" type="console" name="console" launch-prefix="gnome-terminal --tab --">
-        <!--订阅用-->
-        <param name="topic_name" value="tb2/pose" />
-        <!--打印用-->
-        <param name="vehicle_name" value="tb2" />        
+        <param name="topic_name" value="/vrpn_client_node/tb2/pose" />
+        <param name="vehicle_name" value="tb2" />   
+        <param name="sim_mode" value="false" />                     
     </node>
 
     <node pkg="sin_runner_tb2" type="station" name="station" launch-prefix="gnome-terminal --tab --" />

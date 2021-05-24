@@ -1,8 +1,0 @@
-<launch>
-    <node pkg="sin_runner_tb2" type="console" name="console" output="screen">
-        <!--订阅用-->
-        <param name="topic_name" value="tb2/pose" />
-        <!--打印用-->
-        <param name="vehicle_name" value="tb2" />        
-    </node>
-</launch>
