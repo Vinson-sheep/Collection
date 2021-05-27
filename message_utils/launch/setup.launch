@@ -1,0 +1,7 @@
+<launch>
+    <group ns="uav1">
+        <node pkg="message_utils" type="example_pub" name="publisher" output="screen" />    
+    </group>
+
+    <node pkg="message_utils" type="example_sub" name="listen" output="screen" />    
+</launch>

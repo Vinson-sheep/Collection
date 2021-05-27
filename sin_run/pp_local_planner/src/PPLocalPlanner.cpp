@@ -260,9 +260,19 @@ const int PPLocalPlanner::get_track_point_id(){\
             break;
         }
     }
+    // // in case of tracing back
+    // if (index < track_index_){
+    //     if (track_index_ + 1 < plan_.size()){
+    //         index = track_index_ + 1;
+    //     }
+    //     else{
+    //         index = track;
+    //     }
+    // }
 
-    // ROS_INFO("index2 %d", index);
+    // track_index_ = index;
 
+    // return track_index_;
     return index;
 }
 

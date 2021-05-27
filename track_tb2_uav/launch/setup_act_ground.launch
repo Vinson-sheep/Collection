@@ -1,0 +1,14 @@
+<launch>
+    <include file="$(find vrpn_client_ros)/launch/sample.launch">
+		<arg name="server" value="192.168.1.2"/>
+	</include>
+    <!--<remap from="vrpn_client_node/uav1/pose" to="uav1/mavros/vision_pose/pose" />-->
+    <group ns="uav1">
+        <node pkg="track_tb2_uav" type="controller_node" name="controller_node" output="screen">
+				<param name="uav_name" value="uav1" />
+				<param name="ugv_name" value="tb2" />
+        </node>
+    </group>
+
+    <node pkg="track_tb2_uav" type="console_uav" name="console_uav" output="screen" launch-prefix="gnome-terminal --tab --" />
+</launch>

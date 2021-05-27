@@ -10,6 +10,7 @@
 #include <tf2/utils.h> // getYaw
 #include <vector>
 #include <angles/angles.h>
+#include <iostream>
 
 namespace TB2
 {

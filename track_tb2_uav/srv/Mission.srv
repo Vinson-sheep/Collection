@@ -1,0 +1,4 @@
+int8 mission
+---
+bool success
+string message
